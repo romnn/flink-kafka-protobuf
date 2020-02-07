@@ -12,7 +12,7 @@ import java.lang.Exception;
 import com.romnn.flinkkafkaprotobuf.protos.PersonProto.Person;
 
 
-public class PersonDeserializer implements DeserializationSchema<Person> {
+public class GenericPersonDeserializer implements DeserializationSchema<Person> {
 
     @Override
     public Person deserialize(byte[] message) throws IOException {
