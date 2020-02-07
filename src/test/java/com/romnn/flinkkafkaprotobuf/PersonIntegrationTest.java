@@ -27,6 +27,8 @@ import java.util.Properties;
 import com.romnn.flinkkafkaprotobuf.protos.PersonProto.Person;
 import com.romnn.flinkkafkaprotobuf.PersonSerializer;
 import com.romnn.flinkkafkaprotobuf.PersonDeserializer;
+import com.romnn.flinkkafkaprotobuf.GenericBinaryProtoDeserializer;
+import com.romnn.flinkkafkaprotobuf.GenericBinaryProtoSerializer;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import java.util.Optional;
@@ -48,7 +50,7 @@ public class PersonIntegrationTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
                  { new PersonSerializer(), new PersonDeserializer() },
-                 { new PersonSerializer(), new PersonDeserializer() },
+                 { new GenericBinaryProtoSerializer<Person>(), new GenericBinaryProtoDeserializer<Person>(Person.class) },
            });
     }
 

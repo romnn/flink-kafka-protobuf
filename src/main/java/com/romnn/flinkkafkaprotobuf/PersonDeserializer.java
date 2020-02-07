@@ -16,13 +16,8 @@ public class PersonDeserializer implements DeserializationSchema<Person> {
 
     @Override
     public Person deserialize(byte[] message) throws IOException {
-
-        // System.out.println("Got a message");
         try {
-            Person p = Person.parseFrom(message);
-            // System.out.println("Parsed message");
-            // System.out.println(p);
-            return p;
+            return Person.parseFrom(message);
         } catch (Exception e) {
             System.out.println(e.toString());
             throw new IOException("Unable to deserialize bytes");

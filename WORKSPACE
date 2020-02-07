@@ -57,6 +57,10 @@ maven_install(
         "org.apache.flink:flink-core:%s" % FLINK_VERSION,
         "org.apache.flink:flink-java:%s" % FLINK_VERSION,
         # "org.apache.flink:flink-avro:%s" % FLINK_VERSION,
+        # https://mvnrepository.com/artifact/org.apache.flink/flink-metrics-dropwizard
+        # https://mvnrepository.com/artifact/com.codahale.metrics/metrics-core
+        "org.apache.flink:flink-metrics-dropwizard:%s" % FLINK_VERSION,
+        "com.codahale.metrics:metrics-core:3.0.2",
         "org.apache.flink:flink-streaming-java_%s:%s" % (SCALA_VERSION, FLINK_VERSION),
         "org.apache.flink:flink-connector-kafka-0.11_%s:%s" % (SCALA_VERSION, FLINK_VERSION),
     ],
